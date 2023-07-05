@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FragmentDinamic</string>
+    <string name="volver">volver</string>
 </resources>

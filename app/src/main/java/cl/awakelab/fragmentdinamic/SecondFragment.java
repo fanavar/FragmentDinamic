@@ -47,7 +47,8 @@ public class SecondFragment extends Fragment {
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+
+
         return fragment;
     }
 
@@ -65,11 +66,17 @@ public class SecondFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentSecondBinding.inflate(getLayoutInflater(), container, false);
-        binding.buttonVolver.setOnClickListener(v -> {});
+        binding.buttonVolver.setOnClickListener(v -> {
+            back();
+        });
         binding.webSite.loadUrl(mParam1);
         return  binding.getRoot();
 
 
+    }
+    private void back(){
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        fm.popBackStack();
     }
 
 

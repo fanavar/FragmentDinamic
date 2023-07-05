@@ -71,8 +71,8 @@ public class FirstFragment extends Fragment {
             String URL = binding.editTextWeb.getText().toString();
 
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,
-                    SecondFragment.newInstance(URL, ""),
-                    "").commit();
+                    SecondFragment.newInstance(URL, ""),"Second").addToBackStack(null)
+                    .commit();
 
         });
         return binding.getRoot();
